@@ -22,15 +22,10 @@ class Proj {
     /**
      * Constructs a new <code>Proj</code>.
      * @alias module:model/Proj
-     * @param title {String} 
-     * @param image {String} 
-     * @param _abstract {String} 
-     * @param start {String} 
-     * @param sdate {String} 
      */
-    constructor(title, image, _abstract, start, sdate) { 
+    constructor() { 
         
-        Proj.initialize(this, title, image, _abstract, start, sdate);
+        Proj.initialize(this);
     }
 
     /**
@@ -38,12 +33,7 @@ class Proj {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, title, image, _abstract, start, sdate) { 
-        obj['title'] = title;
-        obj['image'] = image;
-        obj['abstract'] = _abstract;
-        obj['start'] = start;
-        obj['sdate'] = sdate;
+    static initialize(obj) { 
     }
 
     /**
@@ -60,21 +50,6 @@ class Proj {
             if (data.hasOwnProperty('_id')) {
                 obj['_id'] = ApiClient.convertToType(data['_id'], 'String');
             }
-            if (data.hasOwnProperty('title')) {
-                obj['title'] = ApiClient.convertToType(data['title'], 'String');
-            }
-            if (data.hasOwnProperty('image')) {
-                obj['image'] = ApiClient.convertToType(data['image'], 'String');
-            }
-            if (data.hasOwnProperty('abstract')) {
-                obj['abstract'] = ApiClient.convertToType(data['abstract'], 'String');
-            }
-            if (data.hasOwnProperty('start')) {
-                obj['start'] = ApiClient.convertToType(data['start'], 'String');
-            }
-            if (data.hasOwnProperty('sdate')) {
-                obj['sdate'] = ApiClient.convertToType(data['sdate'], 'String');
-            }
         }
         return obj;
     }
@@ -86,31 +61,6 @@ class Proj {
  * @member {String} _id
  */
 Proj.prototype['_id'] = undefined;
-
-/**
- * @member {String} title
- */
-Proj.prototype['title'] = undefined;
-
-/**
- * @member {String} image
- */
-Proj.prototype['image'] = undefined;
-
-/**
- * @member {String} abstract
- */
-Proj.prototype['abstract'] = undefined;
-
-/**
- * @member {String} start
- */
-Proj.prototype['start'] = undefined;
-
-/**
- * @member {String} sdate
- */
-Proj.prototype['sdate'] = undefined;
 
 
 

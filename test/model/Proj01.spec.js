@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new TempApi.Proj();
+    instance = new TempApi.Proj01();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,16 +47,40 @@
       object[property] = value;
   }
 
-  describe('Proj', function() {
-    it('should create an instance of Proj', function() {
-      // uncomment below and update the code to test Proj
-      //var instane = new TempApi.Proj();
-      //expect(instance).to.be.a(TempApi.Proj);
+  describe('Proj01', function() {
+    it('should create an instance of Proj01', function() {
+      // uncomment below and update the code to test Proj01
+      //var instane = new TempApi.Proj01();
+      //expect(instance).to.be.a(TempApi.Proj01);
     });
 
     it('should have the property id (base name: "_id")', function() {
       // uncomment below and update the code to test the property id
-      //var instance = new TempApi.Proj();
+      //var instance = new TempApi.Proj01();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property title (base name: "title")', function() {
+      // uncomment below and update the code to test the property title
+      //var instance = new TempApi.Proj01();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property image (base name: "image")', function() {
+      // uncomment below and update the code to test the property image
+      //var instance = new TempApi.Proj01();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property _abstract (base name: "abstract")', function() {
+      // uncomment below and update the code to test the property _abstract
+      //var instance = new TempApi.Proj01();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property sdate (base name: "sdate")', function() {
+      // uncomment below and update the code to test the property sdate
+      //var instance = new TempApi.Proj01();
       //expect(instance).to.be();
     });
 

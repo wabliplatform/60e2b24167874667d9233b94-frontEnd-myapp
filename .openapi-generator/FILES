@@ -4,6 +4,9 @@
 README.md
 config.js
 docs/Proj.md
+docs/Proj01.md
+docs/Proj01Api.json
+docs/Proj01Api.md
 docs/ProjApi.json
 docs/ProjApi.md
 expressServer.js
@@ -12,7 +15,9 @@ index.js
 mocha.opts
 package.json
 src/ApiClient.js
+src/api/Proj01Api.js
 src/api/ProjApi.js
 src/index.js
 src/model/Proj.js
+src/model/Proj01.js
 webpack.config.js
