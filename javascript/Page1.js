@@ -27,7 +27,7 @@ let apiProjApi = new TempApi.ProjApi();import TempApi from '../src/index';window
           subDataElements[i].textContent = data[data.length -i -1].abstract;
         }
        } catch (e) { console.log(e) };
-        
+        subDataElements[i].addEventListener('click',() => {{ location.href= '/Page3/'+data[data.length -i -1]._id+'';}} )
       }
     });
     
@@ -97,66 +97,4 @@ let apiProjApi = new TempApi.ProjApi();import TempApi from '../src/index';window
     }
 
   
-    [...subDataElements].forEach((element,index) => {if(index >= data.length) subDataElements[index].style.display = 'none';})}});};const onClickPaginationButton = (chunk, child) => {
-    for (let i = 0; i < child.parentNode.children.length; i++) {
-
-      if(child.parentNode.children[i].classList.value.includes('active') === true){
-        child.parentNode.children[i].classList.remove('active');
-      }
-    }
-
-    child.parentNode.children[chunk].classList.add("active");
-
-  apiProjApi.getAllproj((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements = document.getElementById("idb1j").querySelectorAll( "[dataitem='true']" );
-[...subDataElements].forEach((element, index) => {
-        if (index >= data.length - (chunk-1)*subDataElements.length) {
-            subDataElements[index].style.display = 'none';
-        }
-        else {
-            subDataElements[index].style.display = "";
-        }
-      });data.forEach((item, i) => {
-
-        let revertIndex = data.length - i -1;
-
-        if(data.length - chunk*subDataElements.length <= revertIndex && revertIndex < data.length - (chunk-1)*subDataElements.length){
-            try { 
-    const insideSubDataElement = subDataElements[i-(chunk-1 )*subDataElements.length].querySelector("[annotationname = 'image']");
-    if(insideSubDataElement !== null){
-      insideSubDataElement.src = data[revertIndex].image;
-    }
-   } catch (e) { console.log(e) };try { 
-    const insideSubDataElement = subDataElements[i-(chunk-1 )*subDataElements.length].querySelector("[annotationname = 'title']");
-    if(insideSubDataElement !== null){
-      insideSubDataElement.textContent = data[revertIndex].title;
-    }
-   } catch (e) { console.log(e) };try { 
-    const insideSubDataElement = subDataElements[i-(chunk-1 )*subDataElements.length].querySelector("[annotationname = 'abstract']");
-    if(insideSubDataElement !== null){
-      insideSubDataElement.textContent = data[revertIndex].abstract;
-    }
-   } catch (e) { console.log(e) };
-        }
-    })
-    }});}
-
-    const returnChunkIndex = (chunk, numberOfPages, cause) => {
-
-      if(cause === '+'){
-        if(chunk < numberOfPages){
-          return chunk + 1;
-        }
-        else{
-          return chunk;
-        }
-      }
-      else if(cause === '-'){
-        if(chunk > 2){
-          return chunk - 1;
-        }
-        else{
-          return 1;
-        }
-      }
-    }
-  
+    [...subDataElements].forEach((element,index) => {if(index >= data.length) subDataElements[index].style.display = 'none';})}});};
