@@ -84,6 +84,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sdate (base name: "sdate")', function() {
+      // uncomment below and update the code to test the property sdate
+      //var instance = new TempApi.Proj();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

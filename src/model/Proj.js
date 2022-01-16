@@ -26,10 +26,11 @@ class Proj {
      * @param image {String} 
      * @param _abstract {String} 
      * @param start {String} 
+     * @param sdate {String} 
      */
-    constructor(title, image, _abstract, start) { 
+    constructor(title, image, _abstract, start, sdate) { 
         
-        Proj.initialize(this, title, image, _abstract, start);
+        Proj.initialize(this, title, image, _abstract, start, sdate);
     }
 
     /**
@@ -37,11 +38,12 @@ class Proj {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, title, image, _abstract, start) { 
+    static initialize(obj, title, image, _abstract, start, sdate) { 
         obj['title'] = title;
         obj['image'] = image;
         obj['abstract'] = _abstract;
         obj['start'] = start;
+        obj['sdate'] = sdate;
     }
 
     /**
@@ -69,6 +71,9 @@ class Proj {
             }
             if (data.hasOwnProperty('start')) {
                 obj['start'] = ApiClient.convertToType(data['start'], 'String');
+            }
+            if (data.hasOwnProperty('sdate')) {
+                obj['sdate'] = ApiClient.convertToType(data['sdate'], 'String');
             }
         }
         return obj;
@@ -101,6 +106,11 @@ Proj.prototype['abstract'] = undefined;
  * @member {String} start
  */
 Proj.prototype['start'] = undefined;
+
+/**
+ * @member {String} sdate
+ */
+Proj.prototype['sdate'] = undefined;
 
 
 

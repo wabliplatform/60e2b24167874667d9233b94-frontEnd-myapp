@@ -15,12 +15,12 @@ let apiProjApi = new TempApi.ProjApi();import TempApi from '../src/index';docume
           subDataElements[i].src = data[data.length -i -1].image;
         }
        } catch (e) { console.log(e) };try { 
-        const insideSubDataElement = subDataElements[i].querySelector("[annotationname = 'start']");
+        const insideSubDataElement = subDataElements[i].querySelector("[annotationname = 'sdate']");
         if(insideSubDataElement !== null){
-          insideSubDataElement.textContent = data[data.length -i -1].start;
+          insideSubDataElement.textContent = data[data.length -i -1].sdate;
         }
-        else if(subDataElements[i].getAttribute('annotationname') === 'start'){
-          subDataElements[i].textContent = data[data.length -i -1].start;
+        else if(subDataElements[i].getAttribute('annotationname') === 'sdate'){
+          subDataElements[i].textContent = data[data.length -i -1].sdate;
         }
        } catch (e) { console.log(e) };try { 
         const insideSubDataElement = subDataElements[i].querySelector("[annotationname = 'title']");
