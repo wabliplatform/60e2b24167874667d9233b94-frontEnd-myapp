@@ -1,8 +1,8 @@
-let apiProjApi = new TempApi.ProjApi();import TempApi from '../src/index';document.getElementById('iomz').onclick = (event) => {
+let apiProj01Api = new TempApi.Proj01Api();import TempApi from '../src/index';document.getElementById('iomz').onclick = (event) => {
     event.preventDefault();
     { location.href= '/index';}};document.getElementById('is5kl').onclick = (event) => {
     event.preventDefault();
-    { location.href= '/create';}};window.onload = () => {apiProjApi.getAllproj((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements = document.getElementById("idb1j").querySelectorAll( "[dataitem='true']" );
+    { location.href= '/create';}};window.onload = () => {apiProj01Api.getAllproj01((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements = document.getElementById("idb1j").querySelectorAll( "[dataitem='true']" );
   data.forEach((item,i) => {
     if(subDataElements.length > i)
       {
