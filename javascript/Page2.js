@@ -1,0 +1,3 @@
+let apiProjApi = new TempApi.ProjApi();import TempApi from '../src/index';let proj = new TempApi.Proj();document.getElementById('i26fh').onclick = (event) => {
+    event.preventDefault();
+    proj['title'] = document.querySelector("[annotationname = 'title']").value;proj['image'] = document.querySelector("[annotationname = 'image']").value;proj['abstract'] = document.querySelector("[annotationname = 'abstract']").value;apiProjApi.createproj( proj, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); { location.href= '/Page1/'+response.body.query._id+'';}}});};
