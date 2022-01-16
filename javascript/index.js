@@ -23,6 +23,14 @@ let apiProjApi = new TempApi.ProjApi();import TempApi from '../src/index';docume
           subDataElements[i].textContent = data[data.length -i -1].start;
         }
        } catch (e) { console.log(e) };try { 
+        const insideSubDataElement = subDataElements[i].querySelector("[annotationname = 'title']");
+        if(insideSubDataElement !== null){
+          insideSubDataElement.textContent = data[data.length -i -1].title;
+        }
+        else if(subDataElements[i].getAttribute('annotationname') === 'title'){
+          subDataElements[i].textContent = data[data.length -i -1].title;
+        }
+       } catch (e) { console.log(e) };try { 
         const insideSubDataElement = subDataElements[i].querySelector("[annotationname = 'abstract']");
         if(insideSubDataElement !== null){
           insideSubDataElement.textContent = data[data.length -i -1].abstract;
