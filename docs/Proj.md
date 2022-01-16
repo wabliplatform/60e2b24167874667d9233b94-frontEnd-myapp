@@ -8,5 +8,6 @@ Name | Type | Description | Notes
 **title** | **String** |  | 
 **image** | **String** |  | 
 **_abstract** | **String** |  | 
+**start** | **String** |  | 
 
 

@@ -1,4 +1,8 @@
-let apiProjApi = new TempApi.ProjApi();import TempApi from '../src/index';window.onload = () => {apiProjApi.getAllproj((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements = document.getElementById("idb1j").querySelectorAll( "[dataitem='true']" );
+let apiProjApi = new TempApi.ProjApi();import TempApi from '../src/index';document.getElementById('iomz').onclick = (event) => {
+    event.preventDefault();
+    { location.href= '/index';}};document.getElementById('is5kl').onclick = (event) => {
+    event.preventDefault();
+    { location.href= '/create';}};window.onload = () => {apiProjApi.getAllproj((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements = document.getElementById("idb1j").querySelectorAll( "[dataitem='true']" );
   data.forEach((item,i) => {
     if(subDataElements.length > i)
       {
@@ -9,6 +13,14 @@ let apiProjApi = new TempApi.ProjApi();import TempApi from '../src/index';window
         }
         else if(subDataElements[i].getAttribute('annotationname') === 'image'){
           subDataElements[i].src = data[data.length -i -1].image;
+        }
+       } catch (e) { console.log(e) };try { 
+        const insideSubDataElement = subDataElements[i].querySelector("[annotationname = 'start']");
+        if(insideSubDataElement !== null){
+          insideSubDataElement.textContent = data[data.length -i -1].start;
+        }
+        else if(subDataElements[i].getAttribute('annotationname') === 'start'){
+          subDataElements[i].textContent = data[data.length -i -1].start;
         }
        } catch (e) { console.log(e) };try { 
         const insideSubDataElement = subDataElements[i].querySelector("[annotationname = 'title']");
@@ -27,7 +39,7 @@ let apiProjApi = new TempApi.ProjApi();import TempApi from '../src/index';window
           subDataElements[i].textContent = data[data.length -i -1].abstract;
         }
        } catch (e) { console.log(e) };
-        subDataElements[i].addEventListener('click',() => {{ location.href= '/Page3/'+data[data.length -i -1]._id+'';}} )
+        subDataElements[i].addEventListener('click',() => {{ location.href= '/view/'+data[data.length -i -1]._id+'';}} )
       }
     });
     

@@ -25,10 +25,11 @@ class Proj {
      * @param title {String} 
      * @param image {String} 
      * @param _abstract {String} 
+     * @param start {String} 
      */
-    constructor(title, image, _abstract) { 
+    constructor(title, image, _abstract, start) { 
         
-        Proj.initialize(this, title, image, _abstract);
+        Proj.initialize(this, title, image, _abstract, start);
     }
 
     /**
@@ -36,10 +37,11 @@ class Proj {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, title, image, _abstract) { 
+    static initialize(obj, title, image, _abstract, start) { 
         obj['title'] = title;
         obj['image'] = image;
         obj['abstract'] = _abstract;
+        obj['start'] = start;
     }
 
     /**
@@ -64,6 +66,9 @@ class Proj {
             }
             if (data.hasOwnProperty('abstract')) {
                 obj['abstract'] = ApiClient.convertToType(data['abstract'], 'String');
+            }
+            if (data.hasOwnProperty('start')) {
+                obj['start'] = ApiClient.convertToType(data['start'], 'String');
             }
         }
         return obj;
@@ -91,6 +96,11 @@ Proj.prototype['image'] = undefined;
  * @member {String} abstract
  */
 Proj.prototype['abstract'] = undefined;
+
+/**
+ * @member {String} start
+ */
+Proj.prototype['start'] = undefined;
 
 
 

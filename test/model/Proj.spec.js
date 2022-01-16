@@ -78,6 +78,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property start (base name: "start")', function() {
+      // uncomment below and update the code to test the property start
+      //var instance = new TempApi.Proj();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
